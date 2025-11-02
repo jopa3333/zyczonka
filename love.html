@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dla Ciebie, Moja Miłości ❤️</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #ffe6eb, #fff8f9);
+      color: #4a2c2a;
+      text-align: center;
+      padding: 40px;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #e63946;
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 12px 0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    li:hover {
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    img {
+      margin-top: 50px;
+      width: 85%;
+      max-width: 500px;
+      border-radius: 18px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* 💕 Animowane serduszka w tle */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff8fa3;
+      font-size: 20px;
+      animation: fall linear forwards;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>10 powodów, dla których Cię kocham 💕</h1>
+
+  <ul>
+    <li>Za Twój uśmiech, który rozświetla każdy mój dzień.</li>
+    <li>Za to, że razem potrafimy śmiać się z najdrobniejszych rzeczy.</li>
+    <li>Za Twoją cierpliwość, kiedy ja jej czasem nie mam.</li>
+    <li>Za to, że zawsze we mnie wierzysz.</li>
+    <li>Za to, że jesteś moim najlepszym przyjacielem.</li>
+    <li>Za wspólne chwile, które tworzą nasze wspomnienia.</li>
+    <li>Za to, że rozumiesz mnie bez słów.</li>
+    <li>Za to, że przy Tobie jestem sobą.</li>
+    <li>Za to, że sprawiasz, że każdy dzień staje się wyjątkowy.</li>
+    <li>Za to, że po prostu jesteś ❤️</li>
+  </ul>
+
+  <img src="zdjecie.jpg" alt="Nasze zdjęcie ze ślubu">
+
+  <script>
+    // 💗 Losowe serduszka spadające po ekranie
+    const body = document.body;
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 400);
+  </script>
+</body>
+</html>
